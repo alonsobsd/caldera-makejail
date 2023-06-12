@@ -1,12 +1,12 @@
 # caldera-makejail
-MITRE Caldera makejail is a [AppJail](https://github.com/DtxdF/AppJail) template [AppJail-makejail](https://github.com/AppJail-makejails) used by deploy a testing [MITRE Caldera](https://caldera.mitre.org/)) a scalable, automated adversary emulation platform . The principal goals are helps us to fast way install, configure and run MITRE Caldera into a FreeBSD jail. It can be helpful to easily automate adversary emulation, assist manual red-teams, and automate incident response. 
+MITRE Caldera makejail is an [AppJail-makejail](https://github.com/AppJail-makejails) used by deploy a testing [MITRE Caldera](https://caldera.mitre.org/)) a scalable, automated adversary emulation platform . The principal goals are helps us to fast way install, configure and run MITRE Caldera into a FreeBSD jail. It can be helpful to easily automate adversary emulation, assist manual red-teams, and automate incident response. 
 
 ![image](https://github.com/alonsobsd/caldera-makejail/assets/11150989/2e2a3fc7-58af-4728-8cea-fb314d3f83f6)
 
 ![image](https://github.com/alonsobsd/caldera-makejail/assets/11150989/a1471e83-53bf-4fad-9802-b0864a4cc9d4)
 
 ## Requirements
-Before you can install MITRE Caldera using this template you need some initial configurations
+Before you can install MITRE Caldera using this makejail you need some initial configurations
 
 #### Enable Packet filter
 We need add somes lines to /etc/rc.conf
