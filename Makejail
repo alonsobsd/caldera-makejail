@@ -5,7 +5,7 @@ ARG network=caldera-net
 
 CMD sed -e "s|quarterly|latest|g" -i.bak /etc/pkg/FreeBSD.conf
 
-PKG caldera go base64 python3
+PKG caldera go base64 python3 haproxy24
 
 CMD chown -R caldera:caldera /usr/local/www/caldera/data
 CMD chown -R caldera:caldera /usr/local/www/caldera/plugins
@@ -27,6 +27,9 @@ CMD chown root:wheel /root/pre-caldera-init.sh
 
 CMD sh /root/pre-caldera-init.sh
 CMD rm /root/pre-caldera-init.sh
+
+REPLACE /usr/local/www/caldera/conf/local.yml CALDERA_IP ${caldera_ip}
+CMD sed -e "s|http://localhost:8888|https://${caldera_ip}:8443|g" -i.bak /usr/local/www/caldera/plugins/magma/dist/assets/index*.js
 
 CMD chmod 640 /usr/local/www/caldera/conf/local.yml
 CMD chown caldera:wheel /usr/local/www/caldera/conf/local.yml

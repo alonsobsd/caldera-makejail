@@ -5,7 +5,7 @@ app.contact.dns.domain: mycaldera.caldera
 app.contact.dns.socket: 0.0.0.0:8853
 app.contact.gist: API_KEY
 app.contact.html: /weather
-app.contact.http: http://0.0.0.0:8888
+app.contact.http: https://%{CALDERA_IP}:8443
 app.contact.slack.api_key: SLACK_TOKEN
 app.contact.slack.bot_id: SLACK_BOT_ID
 app.contact.slack.channel_id: SLACK_CHANNEL_ID

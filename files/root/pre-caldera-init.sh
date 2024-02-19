@@ -6,9 +6,9 @@ echo " "
 
 sleep 5
 
-adminpass=$(openssl rand -base64 14)
-bluepass=$(openssl rand -base64 14)
-redpass=$(openssl rand -base64 14)
+adminpass=$(openssl rand -base64 32)
+bluepass=$(openssl rand -base64 32)
+redpass=$(openssl rand -base64 32)
 
 sed -i "" -e "s|admin: admin|admin: ${adminpass}|g" /usr/local/www/caldera/conf/local.yml
 sed -i "" -e "s|blue: admin|blue: ${bluepass}|g" /usr/local/www/caldera/conf/local.yml
@@ -71,16 +71,6 @@ sed -i "" -e "s|%%ENCRYPTION_KEY%%|${randomkey}|g" /usr/local/www/caldera/conf/l
 
 echo " "
 echo -e "\e[1;37m local.yml KEYS generated ...\e[0m"
-echo " "
-
-echo " "
-echo -e "\e[1;37m Patching /usr/local/etc/rc.d/caldera ...\e[0m"
-echo " "
-
-sed -i "" -e 's|caldera_user=\"caldera\"|caldera_user=\"caldera\"\ncaldera_env=\"GOCACHE=/tmp/caldera/.cache GOMODCACHE=/tmp/caldera/.vendor\"|g' /usr/local/etc/rc.d/caldera
-
-echo " "
-echo -e "\e[1;37m /usr/local/etc/rc.d/caldera file patched ...\e[0m"
 echo " "
 
 sleep 3
